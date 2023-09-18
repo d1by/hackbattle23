@@ -1,2 +1,1 @@
-# hackbattle23
-team name: unemployed
+# hackbattle 2023 - team "unemployed"

@@ -1,6 +1,12 @@
 import plotly.express as px
 import pandas as pd
 
+context = {
+    'id' : 90
+}
+
+player_id = context["id"]
+
 data = pd.read_csv('data_preprocessing\Clean_FIFA22_Data.csv')
 
 attack = ['Crossing', 'Finishing', 'HeadingAccuracy', 'Volleys', 'Curve', 'FKAccuracy',
@@ -35,6 +41,9 @@ data = data.drop(data.columns.difference(allowed_col), axis=1)
 #                                     'GKReflexes']
 
 for row_index in range(data.shape[0]):
+    if(row_index != player_id):
+        continue
+
     attack_vals = []
     handling_passing_vals = 0
     physical_vals = 0
@@ -70,6 +79,3 @@ for row_index in range(data.shape[0]):
     fig = px.line_polar(df, r='r', theta='theta', line_close=True)
     fig.update_traces(fill='toself')
     fig.show()
-
-    break
-        

@@ -1,12 +1,9 @@
 import "./App.css";
-import Moto from "./Components/Moto";
-import Landing from "./Components/Landing";
-import Use from "./Components/Use";
+import Landing from "./components/Landing";
 function App() {
   return (
     <div className="App">
       <Landing />
-      <Moto />
     </div>
   );
 }

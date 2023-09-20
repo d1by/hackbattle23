@@ -1,9 +1,15 @@
 import "./App.css";
-import Landing from "./components/Landing";
+import Landing from "./Components/Landing";
+import Moto from "./Components/Moto";
+import Use from "./Components/Use";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <div className="App">
       <Landing />
+      <Moto />
+      <Use />
+      <Footer />
     </div>
   );
 }

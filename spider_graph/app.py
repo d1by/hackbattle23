@@ -35,7 +35,7 @@ class SpiderGraph(Resource):
         data = data.drop(data.columns.difference(allowed_col), axis=1)
 
         #return "reached here"
-        attack_vals = []
+        attack_vals = 0
         handling_passing_vals = 0
         physical_vals = 0
         defense_vals = 0

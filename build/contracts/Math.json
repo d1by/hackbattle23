@@ -1,9 +1,9 @@
 {
   "contractName": "Math",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Standard math utilities missing in the Solidity language.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/utils/math/Math.sol\":\"Math\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c\",\"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS\"]}},\"version\":1}",
-  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e43ca308c8369fc15a2001a17a85cff4ee9a28330f9ae1e7ff2b25f2c22eb12f64736f6c63430008130033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e43ca308c8369fc15a2001a17a85cff4ee9a28330f9ae1e7ff2b25f2c22eb12f64736f6c63430008130033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Standard math utilities missing in the Solidity language.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/utils/math/Math.sol\":\"Math\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c\",\"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fdd793f4e6cae753faa44c24bd10f27ffe86181abe1307c3d48f9f1426b461f164736f6c63430008040033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fdd793f4e6cae753faa44c24bd10f27ffe86181abe1307c3d48f9f1426b461f164736f6c63430008040033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
@@ -36,7 +36,6 @@
       {
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "Math",
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
@@ -1363,7 +1362,7 @@
                           }
                         ]
                       },
-                      "evmVersion": "paris",
+                      "evmVersion": "istanbul",
                       "externalReferences": [
                         {
                           "declaration": 1808,
@@ -1625,7 +1624,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "2952:53:9",
@@ -1800,7 +1798,7 @@
                           }
                         ]
                       },
-                      "evmVersion": "paris",
+                      "evmVersion": "istanbul",
                       "externalReferences": [
                         {
                           "declaration": 1802,
@@ -2167,7 +2165,7 @@
                           }
                         ]
                       },
-                      "evmVersion": "paris",
+                      "evmVersion": "istanbul",
                       "externalReferences": [
                         {
                           "declaration": 1802,
@@ -3435,7 +3433,6 @@
                     "isPure": false,
                     "kind": "functionCall",
                     "lValueRequested": false,
-                    "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
                     "src": "6149:25:9",
@@ -3501,7 +3498,6 @@
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "6209:2:9",
                         "memberName": "Up",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 1709,
@@ -3600,7 +3596,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "6215:25:9",
@@ -3837,9 +3832,6 @@
                     "pathNode": {
                       "id": 1926,
                       "name": "Rounding",
-                      "nameLocations": [
-                        "6071:8:9"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1711,
                       "src": "6071:8:9"
@@ -4098,7 +4090,6 @@
                             "isPure": false,
                             "kind": "functionCall",
                             "lValueRequested": false,
-                            "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
                             "src": "7344:7:9",
@@ -5317,7 +5308,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "8132:23:9",
@@ -5510,7 +5500,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "8399:7:9",
@@ -5603,7 +5592,6 @@
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
-                                    "memberLocation": "8458:2:9",
                                     "memberName": "Up",
                                     "nodeType": "MemberAccess",
                                     "referencedDeclaration": 1709,
@@ -5837,9 +5825,6 @@
                     "pathNode": {
                       "id": 2078,
                       "name": "Rounding",
-                      "nameLocations": [
-                        "8297:8:9"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1711,
                       "src": "8297:8:9"
@@ -7597,7 +7582,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "9900:11:9",
@@ -7690,7 +7674,6 @@
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
-                                    "memberLocation": "9963:2:9",
                                     "memberName": "Up",
                                     "nodeType": "MemberAccess",
                                     "referencedDeclaration": 1709,
@@ -7928,9 +7911,6 @@
                     "pathNode": {
                       "id": 2246,
                       "name": "Rounding",
-                      "nameLocations": [
-                        "9798:8:9"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1711,
                       "src": "9798:8:9"
@@ -9706,7 +9686,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "11341:12:9",
@@ -9799,7 +9778,6 @@
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
-                                    "memberLocation": "11405:2:9",
                                     "memberName": "Up",
                                     "nodeType": "MemberAccess",
                                     "referencedDeclaration": 1709,
@@ -10037,9 +10015,6 @@
                     "pathNode": {
                       "id": 2411,
                       "name": "Rounding",
-                      "nameLocations": [
-                        "11239:8:9"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1711,
                       "src": "11239:8:9"
@@ -11239,7 +11214,6 @@
                         "isPure": false,
                         "kind": "functionCall",
                         "lValueRequested": false,
-                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
                         "src": "12659:13:9",
@@ -11332,7 +11306,6 @@
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
-                                    "memberLocation": "12724:2:9",
                                     "memberName": "Up",
                                     "nodeType": "MemberAccess",
                                     "referencedDeclaration": 1709,
@@ -11620,9 +11593,6 @@
                     "pathNode": {
                       "id": 2534,
                       "name": "Rounding",
-                      "nameLocations": [
-                        "12557:8:9"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1711,
                       "src": "12557:8:9"
@@ -11689,11 +11659,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+    "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.13",
-  "updatedAt": "2023-09-20T11:11:45.569Z",
+  "updatedAt": "2023-09-20T13:16:55.622Z",
   "devdoc": {
     "details": "Standard math utilities missing in the Solidity language.",
     "kind": "dev",

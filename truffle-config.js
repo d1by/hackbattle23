@@ -44,10 +44,10 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+ //const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
-  /**
+  /**   
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
    * will spin up a managed Ganache instance for you on port 9545 when you
@@ -58,6 +58,20 @@ module.exports = {
    */
 
   networks: {
+    sepolia: {
+      provider: () => new HDWalletProvider({
+      mnemonic: {
+      phrase: "0xd7F66FC5013777307E02f589766a54C1cD4761BA"
+      },
+      providerOrUrl: "https://sepolia.infura.io/v3/8d2e8d2f703e4a578215368179dbd7d8"
+      }),
+      network_id: 11155111, // Sepolia's network ID
+      gas: 4000000, // Adjust the gas limit as per your requirements
+      gasPrice: 10000000000, // Set the gas price to an appropriate value
+      confirmations: 2, // Set the number of confirmations needed for a transaction
+      timeoutBlocks: 200, // Set the timeout for transactions
+      skipDryRun: true // Skip the dry run option
+     }
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
@@ -106,7 +120,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.19",      // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.4",      // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {

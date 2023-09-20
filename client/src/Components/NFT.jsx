@@ -25,7 +25,12 @@ function NFTMintingComponent() {
 
     try {
       const accounts = await web3.eth.getAccounts();
-      const nftContract = new web3.eth.Contract(abi, contractAddress);
+      // Assuming `abi` is a JSON string representing the ABI
+      var contractInfo = abi;
+
+      // Initialize the contract using web3.eth.contract
+      var nftContract =  new web3.eth.Contract(contractInfo.abi,contractAddress);
+
 
       // Construct the transaction data to mint an NFT
       const tokenURI = "https://your-token-uri.com"; // Replace with your token URI
@@ -45,6 +50,21 @@ function NFTMintingComponent() {
     }
   }
 
+  const connectWallet = async () => {
+    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        console.log(accounts[0]);
+      } catch (error) {
+        console.log(error.message);
+      }
+    } else {
+      console.log("Please install metamask");
+    }
+  };
+
   useEffect(() => {
     // Initialize web3 with MetaMask's provider
     if (typeof window.ethereum !== "undefined") {
@@ -58,6 +78,7 @@ function NFTMintingComponent() {
     <div>
       <h1>NFT Minting Component</h1>
       <button onClick={mintNFT}>Mint NFT</button>
+      <button onClick={connectWallet}> Connect to wallet</button>
     </div>
   );
 }

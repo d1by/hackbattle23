@@ -1,3 +1,4 @@
+import Moto from "./Moto";
 import Navbar from "./Navbar";
 function Landing() {
   return (

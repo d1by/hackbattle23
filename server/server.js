@@ -22,6 +22,16 @@ const playerSchema = new mongoose.Schema({
     }
 })
 
+const teamSchema = new mongoose.Schema({
+    name: String,
+    password: String,
+    club_history: Array,
+    clauses: {
+        duration: Array,
+        legalities: Array
+    }
+})
+
 const contractSchema = new mongoose.Schema({
     latex_file: String, 
     hash_latex: String,

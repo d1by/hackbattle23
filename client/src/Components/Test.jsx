@@ -35,11 +35,13 @@ function Test() {
     }
     
     
-    return ( <div>
-        <form onSubmit={checkUser}>
+    return ( 
+    <div className="flex justify-center pt-48">
+        <form onSubmit={checkUser} className="flex flex-col items-center gap-4 border-white focus:outline-none border-solid">
+            <img src="./images/Logo.png" />
             <input type="text" placeholder="Username" name="username"></input>
             <input type="password" placeholder="Password" name="password"></input>
-            <button type="submit" className="btn">SUBMIT</button>
+            <button type="submit" className="bg-white hover:bg-blue-400 w-24">SUBMIT</button>
         </form>
     </div> );
 }

@@ -41,10 +41,19 @@ function NFTMintingComponent() {
       };
 
       // Mint the NFT
-      const tx = await nftContract.methods
-        .mintNFT(accounts[0], tokenURI)
-        .send(mintingOptions);
-      console.log(`NFT minted. Transaction hash: ${tx.transactionHash}`);
+      try {
+        // Check if the mintNFT method exists in the contract ABI
+        if (!nftContract.methods.mintToken) {
+            console.error("mintNFT method not found in the contract ABI");
+            return;
+        }
+    
+        // Call the mintNFT method
+        const tx = await nftContract.methods.mintToken(accounts[0], tokenURI).send(mintingOptions);
+      console.log(`NFT minted. Transaction hash: ${tx.transactionHash}`);}
+      catch (error) {
+        console.error("Error minting NFT:", error);
+    }
     } catch (error) {
       console.error("Error minting NFT:", error);
     }

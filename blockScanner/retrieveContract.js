@@ -1,18 +1,19 @@
-const Web3 = require('web3');
+const { Web3 } = require('web3');
 const axios = require('axios');
 
 const etherscanApiKey = 'GGXUMRQZKQ2TX1KDCCSQD3UCGGKAFA8HBI'; 
-const contractAddress = '0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413';
+const contractAddress = '0x583C0C9E5FAFF93ec408cBD7BaFD3719A27b9A5d';//from Database
 
 
-const web3 = new Web3('https://cloudflare-eth.com');
+const web3 = new Web3('https://rpc.sepolia.dev');
 
-const apiUrl = `https://api.etherscan.io/api?module=contract&action=getabi&address=${contractAddress}&apikey=${etherscanApiKey}`;
+const apiUrl = `https://api-sepolia.etherscan.io/api?module=contract&action=getabi&address=0x583C0C9E5FAFF93ec408cBD7BaFD3719A27b9A5d&apikey=GGXUMRQZKQ2TX1KDCCSQD3UCGGKAFA8HBI`;
 
 
 async function getContractABI() {
   try {
     const response = await axios.get(apiUrl);
+    console.log(response);
     const data = response.data;
     if (data.status === '1') {
       const contractABI = JSON.parse(data.result);
@@ -21,7 +22,7 @@ async function getContractABI() {
       const nftContract = new web3.eth.Contract(contractABI, contractAddress);
 
 
-      const tokenId = '1';
+      const tokenId = '2';
       
 
       nftContract.methods.tokenURI(tokenId).call((error, result) => {

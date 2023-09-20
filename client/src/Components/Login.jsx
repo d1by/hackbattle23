@@ -37,28 +37,30 @@ function Login() {
   }
 
   return (
-    <div className="flex gap-48 justify-center pt-16 pb-12 ">
-      <div className="login flex flex-col pt-8 items-center gap-2 bg-transparent backdrop-blur">
-        <form onSubmit={checkUser} className="flex flex-col  gap-4">
-          <img src="./images/Logo.png" alt="" />
-          <h1 className="text-3xl text-white ">UserName</h1>
-          <input
-            className="p-5 my-3 bg-transparent border-b border-white text-white text-xl  focus:outline-0 placeholder:text-white"
-            type="text"
-            placeholder="Enter Username"
-            name="username"
-          ></input>
-          <h1 className="text-white text-3xl">Password</h1>
-          <input
-            className="p-5 my-3 bg-transparent border-b border-white text-white text-xl  focus:outline-0 placeholder:text-white"
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-          ></input>
-          <button className=" text-lg py-2 px-12 border-2 text-white border-white  hover:bg-white hover:text-black">
-            Sign In
-          </button>
-        </form>
+    <div className="bg-[#262626] pb-7">
+      <div className="flex gap-48 justify-center pt-16 pb-12">
+        <div className="login flex flex-col pt-8 items-center gap-2 bg-transparent backdrop-blur">
+          <form onSubmit={checkUser} className="flex flex-col  gap-4">
+            <img src="./images/Logo.png" alt="" />
+            <h1 className="text-3xl text-white ">UserName</h1>
+            <input
+              className="p-5 my-3 bg-transparent border-b border-white text-white text-xl  focus:outline-0 placeholder:text-white"
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+            ></input>
+            <h1 className="text-white text-3xl">Password</h1>
+            <input
+              className="p-5 my-3 bg-transparent border-b border-white text-white text-xl  focus:outline-0 placeholder:text-white"
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+            ></input>
+            <button className=" text-lg py-2 px-12 border-2 text-white border-white  hover:bg-white hover:text-black">
+              Sign In
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -29,8 +29,10 @@ function NFTMintingComponent() {
       var contractInfo = abi;
 
       // Initialize the contract using web3.eth.contract
-      var nftContract =  new web3.eth.Contract(contractInfo.abi,contractAddress);
-
+      var nftContract = new web3.eth.Contract(
+        contractInfo.abi,
+        contractAddress
+      );
 
       // Construct the transaction data to mint an NFT
       const tokenURI = "https://bafybeifqmgyfy4by3gpms5sdv3ft3knccmjsqxfqquuxemohtwfm7y7nwa.ipfs.dweb.link/metadata.json"; // Replace with your token URI

@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #292929;
+  
 }
 
 code {
@@ -67,4 +67,12 @@ height: 328px;
   height: 600px;
   border-radius: 12px;
   box-shadow: 14px 16px 21px 0px rgba(0, 0, 0, 0.25);
+}
+.contract{
+  width: 615px;
+  height: 822px;
+   border-radius: 56px;
+background: conic-gradient(from 180deg at 50% 50%, #5a3805 0deg, #d37662 69.37499821186066deg, #5e3112 140.625deg, #5e3834 209.99999284744263deg, #834d45 283.1249928474426deg, #820322 360deg);
+background-blend-mode: difference, multiply, normal;
+
 }

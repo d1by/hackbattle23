@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #292929;
 }
 
 code {
@@ -20,5 +21,43 @@ code {
   background: url("../public/images/Landing.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
+}
+
+/* MOTO */
+
+
+.moto-font-one{
+  font-family: Minimal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.moto-font-two{
+  font-family: Trip Sans;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.moto-font-three{
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.use{
+  background: url("../public/images/Use.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mycard{
+  width: 248px;
+height: 328px;
+  border-radius: 12px;
+  box-shadow: 14px 16px 21px 0px rgba(0, 0, 0, 0.25);
+
 }

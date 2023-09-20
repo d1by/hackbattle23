@@ -33,11 +33,11 @@ function NFTMintingComponent() {
 
 
       // Construct the transaction data to mint an NFT
-      const tokenURI = "https://your-token-uri.com"; // Replace with your token URI
+      const tokenURI = "https://bafybeifqmgyfy4by3gpms5sdv3ft3knccmjsqxfqquuxemohtwfm7y7nwa.ipfs.dweb.link/metadata.json"; // Replace with your token URI
       const mintingOptions = {
         from: accounts[0],
-        gas: web3.utils.toHex(800000),
-        gasPrice: web3.utils.toHex(web3.utils.toWei("1", "wei")),
+        gas: web3.utils.toHex(3000000),
+        gasPrice: web3.utils.toHex(web3.utils.toWei("1000", "wei")),
       };
 
       // Mint the NFT
@@ -85,9 +85,10 @@ function NFTMintingComponent() {
   // Render the component
   return (
     <div>
-      <h1>NFT Minting Component</h1>
-      <button onClick={mintNFT}>Mint NFT</button>
-      <button onClick={connectWallet}> Connect to wallet</button>
+      <h1 className="text-white text-5xl p-5">NFT Minting Component</h1>
+      <button className="border-2 bg-white hover:bg-blue-500 hover:text-white border-blue-500 px-5 rounded text-xl text-blue-500" onClick={mintNFT}>Mint NFT</button>
+      <br />
+      <button className="border-2 bg-white hover:bg-blue-500 hover:text-white border-blue-500 px-5 rounded text-xl text-blue-500"onClick={connectWallet}> Connect to wallet</button>
     </div>
   );
 }

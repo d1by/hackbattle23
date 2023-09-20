@@ -19,7 +19,7 @@ class SpiderGraph(Resource):
     def get(self, player_id):
         #player_id = context['id']
         player_id = int(player_id)
-        data = pd.read_csv('data_preprocessing\Clean_FIFA22_Data.csv')
+        data = pd.read_csv('../data_preprocessing/Clean_FIFA22_Data.csv')
 
         attack = ['Crossing', 'Finishing', 'HeadingAccuracy', 'Volleys', 'Curve', 'FKAccuracy',
                     'LongShots', 'ShotPower', 'Penalties']

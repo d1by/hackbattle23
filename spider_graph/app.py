@@ -6,13 +6,13 @@ from flask_restful import Resource, Api
 
 import os
 import requests
+import base64
+import json
 
 app = Flask("SpiderGraphAPI")
 api = Api(app)
 
-context = {
-    'id' : 45
-}
+imgur_client_id = 'c370f764f6238b1'
 
 class SpiderGraph(Resource):
 
@@ -77,7 +77,16 @@ class SpiderGraph(Resource):
             
         fig.write_image("images/fig.jpeg")
 
+        url = "https://api.imgur.com/3/upload.json"
+        headers = {"Authorization": f"Client-ID {imgur_client_id}"}
+                   
+        with open("images/fig.jpeg", "rb") as file:
+            data = file.read()
+            base64_data = base64.b64encode(data)
+            response = requests.post(url, headers=headers, data={"image": base64_data})
+            url = response.json()["data"]["link"]
 
+        return url  
 
 api.add_resource(SpiderGraph, '/graphs/<player_id>')
 

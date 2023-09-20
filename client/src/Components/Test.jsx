@@ -2,48 +2,51 @@ import { useNavigate } from "react-router-dom";
 
 function Test() {
     const navigate = useNavigate();
-    function checkUser(e){
-        var loggedIn = false;
-        e.preventDefault();
-        const user = e.target.username.value;
-        const password = e.target.password.value;
-        async function fetchText() {
-            let response = await fetch('http://localhost:8080/127.0.0.1:5500/playerinfo');
-            console.log(response.status); // 200
-            console.log(response.statusText); // OK
-            if (response.status === 200) {
-                let data = await response.text();
-                let jsonData = JSON.parse(data);
-                for (let i = 0; i < jsonData.length ; i++ ){
-                    if(jsonData[i].name===user){
-                        if(jsonData[i].password===password){
-                            loggedIn = true
-                            console.log(jsonData[i]);
-                            navigate("/", {state:jsonData[i]});
-                        }else{
-                            alert("Wrong password, try again");
-                        }
-                    }
+
+    function handleSubmit(e){
+        const weekwage = e.target.weekwage.value;
+        const date = e.target.duration.value;
+        const legalities = e.target.legalities.value;
+        //will also have to send team name and player name
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "weekwage": weekwage,
+                "date": date,
+                "legalities": legalities
+            })
+        };
+        navigate("/");
+        try{
+            fetch('http://localhost:8080/127.0.0.1:5500/contracts', options).then((res)=>{
+                console.log(res);
+                if (res.status === 200) {
+                    console.log(res.status);
+                    console.log("Info Sent successfully");
+                } else {
+                    console.log("Some error occured");
                 }
-                if (loggedIn===false){
-                    console.log("User does not exist. Redirecting to Sign up Page.");
-                    navigate("/login");
-                }
-            }
+            })
+        } catch (err) {
+            console.log(err);
         }
-        fetchText();
+
     }
-    
-    
+
     return ( 
-    <div className="flex justify-center pt-48">
-        <form onSubmit={checkUser} className="flex flex-col items-center gap-4 border-white focus:outline-none border-solid">
-            <img src="./images/Logo.png" />
-            <input type="text" placeholder="Username" name="username"></input>
-            <input type="password" placeholder="Password" name="password"></input>
-            <button type="submit" className="bg-white hover:bg-blue-400 w-24">SUBMIT</button>
-        </form>
-    </div> );
+        <div>
+            <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
+                <input type="number" name="weekwage" placeholder="Weekly Wage"></input>
+                <input type="date" name="duration" placeholder="Till Date"></input>
+                <textarea name="legalities" placeholder="Legalities"></textarea>
+                <button type="submit" className="bg-white text-black hover:bg-black hover:text-white w-32">Submit</button>
+            </form>
+        </div>
+     );
 }
 
 export default Test;

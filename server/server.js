@@ -51,19 +51,66 @@ app.route("/")
         res.send("<h1>Hello World</h1>");
     })
 
-app.route("/playerinfo")
+app.route("/players")
     .get(async (req,res) => {
         // Viewing the database
         const items = await Player.find();
         res.send(items);
     })
 
-app.route("/contractinfo")
+app.route("/contracts")
     .get(async (req,res) => {
         // Viewing the database
         const items = await Contract.find();
         res.send(items);
     })
+    .post(async (req,res) => {
+        
+        const weekwage = req.body.weekwage;
+        const date = req.body.date;
+        const legalities = req.body.legalities;
+
+        const obj = {
+            weekwage: weekwage,
+            date: date,
+            legalities: legalities
+        }
+
+        console.log(obj);
+
+        // let name;
+        // let finalData;
+        // const data = await User.find();
+        // console.log(obj);
+        
+        // let p1 = new Promise((resolve,reject)=>{
+        //     console.log("reached here");
+        //     for(let i = 0; i < data.length; i++){
+        //         const classes = data[i].data.classes
+        //         for (let j = 0; j<classes.length; j++){
+        //             const tempName = classes[j][5];
+        //             console.log(tempName);
+        //             if(tempName===facultyName){
+        //                 console.log("This is the final name" + facultyName);
+        //                 data[i].notifications.push(obj)
+        //                 name = data[i].name;
+        //                 finalData = data[i].notifications;
+        //                 resolve(finalData);
+        //             }
+        //         }
+        //     }
+        // })
+        
+        // p1.then((final)=>{
+        //     User.findOneAndUpdate({name: name},{$set:{notifications: final}}).then((value)=>{
+        //         console.log(final)
+        //     });
+        // })
+    
+    
+
+    })
+    
 
 app.listen(5500,()=>{
     console.log("Server is up and running on port 5500..");
@@ -127,3 +174,53 @@ app.listen(5500,()=>{
     
     // Player.bulkSave([Player1, Player2, Player3, Player4, Player5, Player6]);
     
+
+
+
+app.route("/sendmessage")
+    .post(async (req,res) => {
+        
+        const weekwage = req.body.weekwage;
+        const date = req.body.date;
+        const legalities = req.body.legalities;
+
+        const obj = {
+            weekwage: weekwage,
+            date: date,
+            legalities: legalities
+        }
+
+        console.log(obj);
+
+        // let name;
+        // let finalData;
+        // const data = await User.find();
+        // console.log(obj);
+        
+        // let p1 = new Promise((resolve,reject)=>{
+        //     console.log("reached here");
+        //     for(let i = 0; i < data.length; i++){
+        //         const classes = data[i].data.classes
+        //         for (let j = 0; j<classes.length; j++){
+        //             const tempName = classes[j][5];
+        //             console.log(tempName);
+        //             if(tempName===facultyName){
+        //                 console.log("This is the final name" + facultyName);
+        //                 data[i].notifications.push(obj)
+        //                 name = data[i].name;
+        //                 finalData = data[i].notifications;
+        //                 resolve(finalData);
+        //             }
+        //         }
+        //     }
+        // })
+        
+        // p1.then((final)=>{
+        //     User.findOneAndUpdate({name: name},{$set:{notifications: final}}).then((value)=>{
+        //         console.log(final)
+        //     });
+        // })
+    
+    
+
+    })

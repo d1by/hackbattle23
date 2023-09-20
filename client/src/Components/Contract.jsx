@@ -40,12 +40,7 @@ function Contract() {
             </div>
             <div className="pl-8">
               <div className="text-[#DDFB00] text-7xl ">TERMS</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Expedita officia tenetur, vitae commodi quis dicta quaerat non
-                nemo dolorem deleniti at tempora numquam vel obcaecati suscipit
-                sunt sapiente tempore alias.
-              </p>
+              <p></p>
             </div>
           </div>
         </div>

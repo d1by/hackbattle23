@@ -82,3 +82,17 @@ background: conic-gradient(from 180deg at 50% 50%, #5a3805 0deg, #d37662 69.3749
 background-blend-mode: difference, multiply, normal;
 
 }
+.play{
+  background: url("../public/images/playerCard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.line{
+  background-color:#dd6a00;
+  height: 2px;
+  border: none;
+}
+.para{
+   text-align: justify;
+  text-justify: inter-word
+}

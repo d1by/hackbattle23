@@ -6,18 +6,18 @@ import Footer from "./Components/Footer";
 import NFTMintingComponent from "./Components/NFT";
 import Contract from "./Components/Contract";
 import { useLocation } from "react-router-dom";
+import BigCard from "./Components/BigCard";
 
 function App(props) {
-  const location  = useLocation();
+  const location = useLocation();
   const state = location.state;
   return (
     <div className="App">
-      <Landing 
-        state={props.state}
-      />
+      <Landing state={props.state} />
       <Moto />
       <Use />
       <Footer />
+      <BigCard />
     </div>
   );
 }

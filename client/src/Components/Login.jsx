@@ -9,7 +9,7 @@ function Login() {
     const password = e.target.password.value;
     async function fetchText() {
       let response = await fetch(
-        "http://localhost:8080/127.0.0.1:5500/playerinfo"
+        "http://localhost:8080/127.0.0.1:5500/clubs"
       );
       console.log(response.status); // 200
       console.log(response.statusText); // OK
@@ -20,6 +20,7 @@ function Login() {
           if (jsonData[i].name === user) {
             if (jsonData[i].password === password) {
               loggedIn = true;
+              console.log("Reached here dumbass");
               console.log(jsonData[i]);
               navigate("/", { state: jsonData[i] });
             } else {

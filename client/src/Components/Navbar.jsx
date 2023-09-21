@@ -22,7 +22,6 @@ function Navbar() {
             className="h-12 mr-3"
             alt="Flowbite Logo"
           />
-
           <button
             data-collapse-toggle="navbar-default"
             type="button"
@@ -76,7 +75,7 @@ function Navbar() {
               </li>
               <li>
                 <a
-                  href="#contracts"
+                  href="./Contract"
                   className="block py-2 pl-3 pr-4 text-xl text-white hover:text-2xl duration-500  md:hover:bg-transparent md:border-0 md:hover:text-[#FF7A00] md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Contracts

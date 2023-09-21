@@ -1,6 +1,6 @@
 function footer() {
   return (
-    <div className=" ">
+    <div className=" bg-[#262626]">
       <div className="flex items-start text-white gap-44">
         <div className="py-12 px-16">
           <div className="pb-2">

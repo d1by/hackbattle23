@@ -10,9 +10,10 @@ function Use() {
           </p>
           <p className="pt-3 text-xl">
             regarding contracts by creating a hassle-free platform to manage
-            contracts and players alike.
+            contracts and players alike.`
           </p>
         </div>
+        `
       </div>
       <div className="flex gap-48 justify-center pt-16 pb-12 ">
         <div className="mycard flex flex-col pt-8 items-start gap-2 bg-transparent backdrop-blur">

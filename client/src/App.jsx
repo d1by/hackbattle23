@@ -5,10 +5,16 @@ import Use from "./Components/Use";
 import Footer from "./Components/Footer";
 import NFTMintingComponent from "./Components/NFT";
 import Contract from "./Components/Contract";
-function App() {
+import { useLocation } from "react-router-dom";
+
+function App(props) {
+  const location  = useLocation();
+  const state = location.state;
   return (
     <div className="App">
-      <Landing />
+      <Landing 
+        state={props.state}
+      />
       <Moto />
       <Use />
       <Footer />

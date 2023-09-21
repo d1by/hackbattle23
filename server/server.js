@@ -40,50 +40,89 @@ const contractSchema = new mongoose.Schema({
         to: String
     }
 })
+const clubSchema = new mongoose.Schema({
+    name: String,
+    password: String
+});
 const Player = mongoose.model('player', playerSchema);
+const Clubs = mongoose.model('club', clubSchema);
 const Contract = mongoose.model('contract', contractSchema);
 
 //functions
-function readCSV(){
-    fs.createReadStream('../data_preprocessing/Clean_FIFA22_Data.csv')
-    .pipe(csv())
-    .on('data', (data) => results.push(data))
-    .on('end', async () => {
-        const playerArray = [36,29,64,82,251,14136,1591,241,242,243];
-        for(let j = 0; j < 10; j++){
-            let i = playerArray[j];
-            let temp = results[i];
-            const img = await getImage(i);
-            console.log(img);
-            const obj = new Player({
-                id: i,
-                name: temp.Name,
-                nationality: temp.Nationality,
-                password: "todopassword",
-                club: temp.Club,
-                wage: temp.Wage,
-                height: temp.Height,
-                weight: temp.Weight,
-                img: img
-            });
-            
-        }
-    });
-}
-function getImage(num){
-    async function fetchText() {
-        const url = 'http://127.0.0.1:5000/graphs/'+num;
-        let response = await fetch(url);
-        console.log(response.status); // 200
-        console.log(response.statusText); // OK
-        if (response.status === 200) {
-            let data = await response.text();
-            return(data)
-        }
-    }
-    fetchText();
-}
-readCSV();
+// function readCSV(){
+//     fs.createReadStream('../data_preprocessing/Clean_FIFA22_Data.csv')
+//     .pipe(csv())
+//     .on('data', (data) => results.push(data))
+//     .on('end', async () => {
+//         const playerArray = [36,29,64,82,251,14136,1591,241,242,243];
+//         const imgArray = ["https://i.imgur.com/cyT7qq9.jpg",
+//         "https://i.imgur.com/Yejw7uO.jpg",
+//         "https://i.imgur.com/tUJY74J.jpg",
+//         "https://i.imgur.com/nk1pPdt.jpg",
+//         "https://i.imgur.com/J0A8s6h.jpg",
+//         "https://i.imgur.com/bzetUyk.jpg",
+//         "https://i.imgur.com/uWDqFug.jpg",
+//         "https://i.imgur.com/vMlj9Yo.jpg",
+//         "https://i.imgur.com/3kFgHjw.jpg",
+//         "https://i.imgur.com/v5UrFYB.jpg"];
+//         for(let j = 0; j < 10; j++){
+//             let i = playerArray[j];
+//             let temp = results[i];
+//             // let p = new Promise((res,rej)=>{
+//             //     const img = getImage(i);
+//             //     // console.log(img);
+//             //     // res(img);
+//             // })
+//             // p.then(()=>{
+//                 const obj = new Player({
+//                     id: i,
+//                     name: temp.Name,
+//                     nationality: temp.Nationality,
+//                     password: "todopassword",
+//                     club: temp.Club,
+//                     wage: temp.Wage,
+//                     height: temp.Height,
+//                     weight: temp.Weight,
+//                     img: imgArray[j]
+//                 });
+//                 Player.bulkSave([obj]);
+//             // })
+//         }
+//     });
+// }
+// function getImage(num){
+//     async function fetchText() {
+//         const url = 'http://127.0.0.1:5000/graphs/'+num;
+//         let response = await fetch(url);
+//         console.log(response.status); // 200
+//         console.log(response.statusText); // OK
+//         if (response.status === 200) {
+//             let data = await response.text();
+//             console.log(data);
+//             return(data)
+//         }
+//     }
+//     fetchText();
+// }
+// readCSV();
+// function makeClubs(){
+//     const clubs = ["Paris st. German",
+//     "FC Barcelona",
+//     "Chelsea",
+//     "borussia dortmund",
+//     "Bengaluru FC"];
+
+//     for(let i = 0; i < 5; i++){
+//         const obj = new Clubs({
+//             name: clubs[i],
+//             password: "todopassword"
+//         })
+
+//         Clubs.bulkSave([obj]);
+//     }
+    
+// }
+// makeClubs();
 
 //all stuff
 app.route("/")
@@ -155,3 +194,9 @@ app.listen(5500,()=>{
     console.log("Server is up and running on port 5500..");
 })
 
+app.route("/clubs")
+    .get(async (req,res) => {
+        // Viewing the database
+        const items = await Clubs.find();
+        res.send(items);
+    })

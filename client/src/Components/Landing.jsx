@@ -1,8 +1,10 @@
 import Navbar from "./Navbar";
-function Landing() {
+function Landing(props) {
   return (
     <div className="landing " id="home">
-      <Navbar />
+      <Navbar 
+        state={props.state}
+      />
       <div className="flex pl-32 pt-12 pb-8 flex-col items-start text-white ">
         <h6 className="py-2 ">About</h6>
         <h1 className="py-2 text-8xl">SMART,SECURE,SAFE</h1>

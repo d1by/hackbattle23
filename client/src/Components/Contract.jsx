@@ -1,4 +1,5 @@
 function Contract() {
+  
   return (
     <div className="bg-[#262626] ">
       <form action="" className="flex">
